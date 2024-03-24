@@ -20,9 +20,13 @@ public class App {
         System.out.println("---------------------D1---------------------");
         operations.print(people);
 
+        // (d.2) imprimir a lista das leituras por cada objeto, pessoa ou animal sobre o
+        // qual ocorre o monitoramento.
         System.out.println("\n---------------------D2---------------------");
         operations.printWithPhone(people);
 
+        // (d.3) ordenação crescente dos dados considerando os valores lidos dos
+        // sensores para cada coisa monitorada;
         System.out.println("\n---------------------D3---------------------");
         System.out.println("Lista antes da ordenação");
         operations.print(people);
@@ -30,6 +34,9 @@ public class App {
         System.out.println("\nLista após ordenação");
         operations.print(people);
 
+        // (d.4) deve ser adicionada, a critério do desenvolvedor, uma funcionalidade
+        // extra, relativa ao mini-mundo
+        // escolhido, cuja complexidade seja ou O(N^3) ou O(2^N) ou O(N!).
         System.out.println("\n---------------------D4---------------------");
         Map<String, Integer> peakTime = operations.findPeakTime(people);
         Iterator<String> iterator = peakTime.keySet().iterator();
@@ -37,9 +44,9 @@ public class App {
         System.out
                 .println("O horário de pico é: " +
                         horarioDePico +
-                        "h" +
-                        ", com um consumo total de: " +
+                        "h\n" +
+                        "Consumo total: " +
                         peakTime.get(horarioDePico) +
-                        "Mb");
+                        " Mb");
     }
 }

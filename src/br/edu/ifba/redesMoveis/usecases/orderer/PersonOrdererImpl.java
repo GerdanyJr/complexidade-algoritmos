@@ -19,7 +19,7 @@ public class PersonOrdererImpl implements PersonOrderer {
             for (int j = 0; j < people.size() - i - 1; j++) {
                 double avg1 = getPersonAverageConsumption(people.get(j));
                 double avg2 = getPersonAverageConsumption(people.get(j + 1));
-                if (avg2 > avg1) {
+                if (avg2 < avg1) {
                     Person temp = people.get(j);
                     people.set(j, people.get(j + 1));
                     people.set(j + 1, temp);
