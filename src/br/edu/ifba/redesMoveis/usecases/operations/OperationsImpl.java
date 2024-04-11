@@ -62,7 +62,7 @@ public class OperationsImpl implements Operations<Person> {
 
         for (Map.Entry<String, Integer> entry : consumptionPerHour.entrySet()) {
             Integer currentValue = entry.getValue();
-            Integer maxValue = peakTime.values().iterator().next();
+            Integer maxValue = (Integer) peakTime.values().toArray()[0];
 
             if (currentValue > maxValue) {
                 peakTime.clear();

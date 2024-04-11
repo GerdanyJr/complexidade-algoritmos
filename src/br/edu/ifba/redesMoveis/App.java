@@ -1,6 +1,5 @@
 package br.edu.ifba.redesMoveis;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -39,8 +38,7 @@ public class App {
         // escolhido, cuja complexidade seja ou O(N^3) ou O(2^N) ou O(N!).
         System.out.println("\n---------------------D4---------------------");
         Map<String, Integer> peakTime = operations.findPeakTime(people);
-        Iterator<String> iterator = peakTime.keySet().iterator();
-        String horarioDePico = iterator.hasNext() ? iterator.next() : null;
+        String horarioDePico = (String) peakTime.keySet().toArray()[0];
         System.out
                 .println("O horário de pico é: " +
                         horarioDePico +
