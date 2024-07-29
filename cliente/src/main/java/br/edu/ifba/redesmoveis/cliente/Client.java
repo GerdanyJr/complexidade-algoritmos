@@ -29,6 +29,7 @@ public class Client implements Runnable {
         this.personGenerator = new PersonGenerator();
     }
 
+    // complexidade quadrática, pois chama o método getConsumptionPerHour que por sua vez tem complexidade quadrática
     @Override
     public void run() {
         try {

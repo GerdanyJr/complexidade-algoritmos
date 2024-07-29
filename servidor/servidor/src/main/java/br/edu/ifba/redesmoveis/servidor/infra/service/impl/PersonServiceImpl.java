@@ -26,7 +26,7 @@ import br.edu.ifba.redesmoveis.servidor.util.ConsumptionUtil;
 @Service
 public class PersonServiceImpl implements PersonService {
 
-    private static String PRIVATE_KEY_PATH = "src/main/java/br/edu/ifba/redesmoveis/servidor/privateKey.txt";
+    private static String PRIVATE_KEY_PATH = "servidor/src/main/java/br/edu/ifba/redesmoveis/servidor/privateKey.txt";
     private final PersonRepository personRepository;
     private final Operations operations;
     private final List<Consumption> consumptions;
@@ -37,11 +37,11 @@ public class PersonServiceImpl implements PersonService {
         consumptions = ConsumptionUtil.fillConsumptions();
     }
 
+    // complexidade quadrática O(n^2) pois possui dois laços aninhados
     @Override
     public void register(String payload) {
         RegisterReq registerReq;
         try {
-            System.out.println(decrypt(payload));
             registerReq = decrypt(payload);
             System.out.println("Registrando pessoa com nome " +
                     registerReq.person().getName());
@@ -62,7 +62,6 @@ public class PersonServiceImpl implements PersonService {
                 }
             }
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
